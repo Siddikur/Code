@@ -90,7 +90,6 @@ function windBackward() {
 
 
 // forWard
-
 function mediaForward() {
     clearInterval(rwd);
     rwd.classList.remove('active');
@@ -113,7 +112,7 @@ function mediaForward() {
 
 }
 
-
+// windForward
 function windForward() {
     if (media.currentTime >= media.duration - 3) {
         fwd.classList.remove('active');
@@ -129,6 +128,7 @@ function windForward() {
 
 media.addEventListener('timeupdate', setTime);
 
+// setTime
 function setTime() {
     var minutes = Math.floor(media.currentTime / 60),
         seconds = Math.floor(media.currentTime - minutes * 60),
@@ -166,7 +166,3 @@ document.addEventListener('click', function () {
     media.pause();
     play.setAttribute('data-icon', 'P');
 })
-
-
-
-
